@@ -11,3 +11,14 @@ def count_chars(text):
         else:
             result[c] = 1
     return result
+
+def sort_on(items):
+    return items["num"]
+
+def create_chars_report(chars_count_dictionary):
+    result = []
+    for character in chars_count_dictionary:
+        if character.isalpha():
+            result.append(dict(char=character, num=chars_count_dictionary[character]))
+    result.sort(reverse=True, key=sort_on)
+    return result
